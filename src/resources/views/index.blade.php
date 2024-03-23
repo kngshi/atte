@@ -51,26 +51,35 @@
   
       </div>
 
-    <form class="form" action="/" method="post">
+    <form class="form" action="{{ route('time.start') }}" method="post">
         @csrf
       <div class="form__group" >
         <div class="form__button">
-          <button class="form__button-submit" type="submit"  name="work_start" value="">勤務開始</button>
+          <button class="form__button-submit"　 type="submit"  name="work_start" value="">勤務開始</button>
         </div>
+    </form>
 
+    <form class="form" action="{{ route('time.end') }}" method="post">
+          @csrf
         <div class="form__button">
-          <button class="form__button-submit" type="submit" name="work_end" value="">勤務終了</button>
+          <button class="form__button-submit"　 type="submit" name="work_end" value="">勤務終了</button>
         </div>
+    </form>
 
+     <form class="form" action="{{ route('rest.start') }}" method="post">
+          @csrf
         <div class="form__button">
-          <button class="form__button-submit" type="submit" name="rest_start" value="">休憩開始</button>
+          <button class="form__button-submit"  　type="submit" name="rest_start" value="">休憩開始</button>
         </div>
+      </form>
 
+      <form class="form" action="{{ route('rest.end') }}" method="post">
+          @csrf
         <div class="form__button">
           <button class="form__button-submit" type="submit" name="rest_end" value="">休憩終了</button>
         </div>
-      </div>
-    </form>
+      </form>
+
   </main>
 
   <footer>

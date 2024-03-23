@@ -93,6 +93,12 @@ main {
     cursor: pointer;
 }
 
+.disabled {
+    color: #999;
+    /* 薄い文字色 */
+    /* その他のスタイル */
+}
+
 
 footer {
     padding: 10px 0px;

@@ -58,28 +58,28 @@ echo "<br />";
 echo "<br />";
 
 //勤務開始
-$work_start = new DateTime();
+$work_start = Carbon::now();
 echo $work_start -> format('H:i:s');
 echo "<br />";
 
 //勤務終了
-$work_end = new DateTime();
+$work_end = Carbon::now();
 echo $work_end -> format('H:i:s');
 echo "<br />";
 
 //勤務時間
-$work_total = $work_end->diff($work_start);
+$work_total = $work_end->diff($work_start)->format('%H:%I:%S');
 echo $work_total->format('%H:%I:%S');
 echo "<br />";
 echo "<br />";
 
 //休憩開始
-$rest_start = Carbon::now();
+$rest_start = Carbon::now()-> format('H:i:s');
 echo $rest_start -> format('H:i:s');
 echo "<br />";
 
 //休憩終了
-$rest_end = Carbon::now();
+$rest_end = Carbon::now()-> format('H:i:s');
 echo $rest_end -> format('H:i:s');
 echo "<br />";
 

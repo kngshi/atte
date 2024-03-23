@@ -37,9 +37,10 @@
   <main>
     <div class="contact-form__content">
       <div class="contact-form__heading">
-        <h2>2024年2月14日</h2>
+        <h2>2024年3月16日</h2>
+      <!-- ここはもしかしたら、Y年m月d日という表示もあり？　　DBからデータ（date_id)を引っ張ってこれる形の方が良いのか -->
       </div>
-
+    </div>
 
     　<table class="admin__table">
       <tr class="admin__row">
@@ -49,46 +50,19 @@
         <th class="admin__label">休憩時間</th>
         <th class="admin__label">勤務時間</th>
       </tr>
+      @foreach($times as $time)
       <tr class="admin__row">
         @auth
         <td class="admin__data">{{Auth::user()->name}}</td>
         @endauth
-        <td class="admin__data">{{$work_start}}</td>
-        <td class="admin__data">{{$time}}</td>
-        <td class="admin__data">{{$rest_total}}</td>
-        <td class="admin__data">{{$time}}</td>
+        <td class="admin__data">{{$time->work_start}}</td>
+        <td class="admin__data">{{$time->work_end}}</td>
+        <td class="admin__data">00:00:00</td>
+        <td class="admin__data">00:00:00</td>
       </tr>
-      <!-- かつ、foreachで繰り返し表示? -->
-      <tr class="admin__row">
-        <td class="admin__data">※テスト太郎</td>
-        <td class="admin__data">10:00:00</td> 
-        <td class="admin__data">20:00:00</td>
-        <td class="admin__data">00:30:00</td>
-        <td class="admin__data">09:30:00</td>
-      </tr>
-      <tr class="admin__row">
-        <td class="admin__data">※テスト花子</td>
-        <td class="admin__data">10:00:00</td> 
-        <td class="admin__data">20:00:00</td>
-        <td class="admin__data">00:30:00</td>
-        <td class="admin__data">09:30:00</td>
-      </tr>
-            <tr class="admin__row">
-        <td class="admin__data">※テスト三郎</td>
-        <td class="admin__data">10:00:00</td> 
-        <td class="admin__data">20:00:00</td>
-        <td class="admin__data">00:30:00</td>
-        <td class="admin__data">09:30:00</td>
-      </tr>
-            <tr class="admin__row">
-        <td class="admin__data">※テスト義夫</td>
-        <td class="admin__data">10:00:00</td> 
-        <td class="admin__data">20:00:00</td>
-        <td class="admin__data">00:30:00</td>
-        <td class="admin__data">09:30:00</td>
-      </tr>
-
+       @endforeach
     </table>
+    {{ $times->links() }}
   </main>
 
   <footer>

@@ -10,7 +10,7 @@ class Time extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
+    protected $fillable = [
         'user_id', 'date', 'work_start', 'work_end'
     ];
 
@@ -18,8 +18,9 @@ class Time extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function rests(){
-        return $this->hasMany('App\Models\Rest');
+    public function rest(){
+
+        return $this->hasMany(Rest::class);
     }
-    
+
 }
