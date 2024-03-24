@@ -35,12 +35,13 @@
   </header>
 
   <main>
+     @foreach($timesByDate as $timeByDate)
     <div class="contact-form__content">
       <div class="contact-form__heading">
-        <h2>2024年3月16日</h2>
+        <h2>{{ $timeByDate->date }}</h2>
       <!-- ここはもしかしたら、Y年m月d日という表示もあり？　　DBからデータ（date_id)を引っ張ってこれる形の方が良いのか -->
       </div>
-    </div>
+    
 
     　<table class="admin__table">
       <tr class="admin__row">
@@ -51,18 +52,21 @@
         <th class="admin__label">勤務時間</th>
       </tr>
       @foreach($times as $time)
+     
       <tr class="admin__row">
         @auth
         <td class="admin__data">{{Auth::user()->name}}</td>
         @endauth
         <td class="admin__data">{{$time->work_start}}</td>
         <td class="admin__data">{{$time->work_end}}</td>
-        <td class="admin__data">00:00:00</td>
-        <td class="admin__data">00:00:00</td>
+        <td class="admin__data">{{ $timeByDate->rest_total }}</td>
+        <td class="admin__data">{{ $timeByDate->work_total }}</td>
       </tr>
        @endforeach
     </table>
     {{ $times->links() }}
+   </div>
+   @endforeach
   </main>
 
   <footer>
