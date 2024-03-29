@@ -40,7 +40,6 @@ class TimeController extends Controller
 
         $rest_total = $rest_end->diff($rest_start)-> format('%H:%I:%S');
 
-        
         return view( 'index', compact('user','time','work_start','work_end','work_total','rest_total'));
     }
 
@@ -49,7 +48,7 @@ class TimeController extends Controller
     {
         $user = Auth::id();
         $latest_time = Time::latest()->first();
-        $work_start = Carbon::now();
+        $work_start = Carbon::now()->toTimeString();
         $date = Carbon::now();
         $buttonDisabled = false;
 
@@ -96,29 +95,34 @@ class TimeController extends Controller
     public function attendance()
     {
 
-        $times = Time::simplePaginate(7);
+        $times = Time::Paginate(7);
 
         $timesByDate = Time::where('user_id', auth()->id())
                         ->orderBy('date', 'desc')
                         ->paginate(1);
 
+       $date = Carbon::parse(Time::latest('date')->first()->date)->format('Y-m-d');
+
         foreach ($timesByDate as $timeByDate) {
+        
         $work_start = $timeByDate->work_start;
         $work_end = $timeByDate->work_end;
+
         $rest_start = $timeByDate->rest_start;
         $rest_end = $timeByDate->rest_end;
 
 
         if ($work_start && $work_end && $rest_start && $rest_end) {
+            
             // 勤務時間の計算
             $work_total = $work_end->diff($work_start)->format('%H:%I:%S');
-
             // 休憩時間の計算
             $rest_total = $rest_end->diff($rest_start)->format('%H:%I:%S');
 
-            // モデルに計算結果を追加
+             // モデルに計算結果を追加
             $timeByDate->work_total = $work_total;
             $timeByDate->rest_total = $rest_total;
+
         } else {
             // 時間が取得できない場合はデフォルト値を設定するか、処理をスキップするなど適切な処理を行う
             $timeByDate->work_total = '00:00:00';
@@ -127,7 +131,7 @@ class TimeController extends Controller
 
         }
 
-        return view('attendance', compact('times','timesByDate'));
+        return view('attendance', compact('times','date','timesByDate'));
 
 
     }

@@ -90,6 +90,12 @@ main {
     text-decoration: none;
 }
 
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
+
 footer {
     padding: 10px 0px;
     text-align: center;
