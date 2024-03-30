@@ -1,8 +1,14 @@
 <x-guest-layout>
-    <x-auth-card>
+    <header class="bg-gray-900 text-black text-xl">
+    <div class="container mx-auto py-4">
+        <a class="text-xl font-bold">Atte</a>
+    </div>
+</header>
+    
+     <x-auth-card class="">
         <x-slot name="logo" >
             <div>
-                <h1 class="text-20 italic">会員登録</h1>
+                <h1 class="text-xl italic font-bold">会員登録</h1>
             </div>
         </x-slot>
 
@@ -47,16 +53,28 @@
                                 name="password_confirmation" required />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <div class="login">アカウントをお持ちの方はこちら<br/></div>
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('ログイン') }}
-                </a>
-
-                <x-button class="ml-4">
+            
+            <div class="mt-4 text-center">
+                <x-button class="block mt-1 w-full bg-blue-100 text-white bg-blue-500">
                     {{ __('会員登録') }}
                 </x-button>
             </div>
+
+            <div class="mt-4 text-center" >
+                <div class="login text-center">アカウントをお持ちの方はこちら<br/></div>
+
+                <a class="text-base text-gray-600 hover:text-gray-900 center" href="{{ route('login') }}">
+                    {{ __('ログイン') }}
+                </a>
+
+                
+            </div>
         </form>
     </x-auth-card>
+    <footer class="text-base　bg-gray-900 py-4 text-center">
+        <small>Atte, Inc.</small>
+    </footer>
+
 </x-guest-layout>
+
+

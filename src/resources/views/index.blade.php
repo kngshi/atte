@@ -24,16 +24,17 @@
             <li class="header-nav__item">
               <a class="header-nav__link" href="/attendance">日付一覧</a>
             </li>
-            <div class="mt-3 space-y-1">
+            <div class="mt-3_space-y-1">
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('logout')"
+    onclick="event.preventDefault();
+                this.closest('form').submit();"
+    class="header-nav__link text-black !important underline-none !important" >
+    {{ __('ログアウト') }}
+</x-responsive-nav-link>
                 </form>
               </div>
           </ul>
@@ -50,35 +51,38 @@
         <!-- 認証したidの人物が表示される変数にすれば良い？ -->
   
       </div>
-
+    
+    <div class="form__group-work" >
     <form class="form" action="{{ route('time.start') }}" method="post">
         @csrf
-      <div class="form__group" >
         <div class="form__button">
-          <button class="form__button-submit"　 type="submit"  name="work_start" value="">勤務開始</button>
+          <button class="form__button-submit"  type="submit"  name="work_start" value="">勤務開始</button>
         </div>
     </form>
 
     <form class="form" action="{{ route('time.end') }}" method="post">
           @csrf
         <div class="form__button">
-          <button class="form__button-submit"　 type="submit" name="work_end" value="">勤務終了</button>
+          <button class="form__button-submit" type="submit" name="work_end" value="">勤務終了</button>
         </div>
     </form>
+</div>
 
+<div class="form__group-rest" >
      <form class="form" action="{{ route('rest.start') }}" method="post">
           @csrf
         <div class="form__button">
-          <button class="form__button-submit"  　type="submit" name="rest_start" value="">休憩開始</button>
+          <button class="form__button-submit" type="submit" name="rest_start" value="">休憩開始</button>
         </div>
       </form>
 
       <form class="form" action="{{ route('rest.end') }}" method="post">
           @csrf
         <div class="form__button">
-          <button class="form__button-submit" type="submit" name="rest_end" value="">休憩終了</button>
+          <button class="form__button-submit"  type="submit" name="rest_end" value="">休憩終了</button>
         </div>
       </form>
+</div>
 
   </main>
 

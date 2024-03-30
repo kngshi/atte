@@ -24,11 +24,19 @@
             <li class="header-nav__item">
               <a class="header-nav__link" href="/attendance">日付一覧</a>
             </li>
-            <li class="header-nav__item">
-              <form>
-                <button class="header-nav__button">ログアウト</button>
-              </form>
-            </li>
+            <div class="mt-3_space-y-1">
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                <x-responsive-nav-link :href="route('logout')"
+    onclick="event.preventDefault();
+                this.closest('form').submit();"
+    class="header-nav__link text-black !important underline-none !important" >
+    {{ __('ログアウト') }}
+</x-responsive-nav-link>
+                </form>
+              </div>
           </ul>
         </nav>
     </div>
@@ -62,7 +70,8 @@
       </tr>
        @endforeach
     </table>
-    {{ $times->links() }}
+     {{ $times->links() }}
+  
    </div>
    @endforeach
   </main>

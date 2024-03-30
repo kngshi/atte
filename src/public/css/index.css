@@ -26,15 +26,6 @@
     color:black;
 }
 
-.mt-3 space-y-1 {
-    background: #fff;
-    margin-left: 40px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-
 
 
 .header-nav__button {
@@ -52,11 +43,12 @@
 
 main {
     background-color: #f5f5f5;
+    height: 80vh;
 }
 
 .contact-form__content {
     margin: 0 auto;
-    padding: 30px 15px;
+    padding: 15px 15px;
     max-width: 1230px;
 }
 
@@ -69,27 +61,34 @@ main {
     margin: 0 auto;
     width: 80%;
     text-align: center;
+    
 }
 
-.form__group {
+.form__group-work {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 15px;
+    
 }
 
+.form__group-rest {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+
+}
 
 
 .form__button-submit {
     padding: 20px;
-    margin :20px;
+    margin :15px;
     width: 400px;
     height: 200px;
     border: none;
     border-radius: 3px;
     background: #fff;
     color: #000;
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
 }
 
@@ -103,4 +102,119 @@ main {
 footer {
     padding: 10px 0px;
     text-align: center;
+    height: 15vh;
+}
+
+/* タブレットサイズ */
+@media screen and (max-width: 768px) {
+
+    .header__inner {
+        margin: 0 auto;
+        padding: 20px 15px;
+        max-width: 768px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    .header-nav {
+        background: #fff;
+        display: flex;
+    }
+
+        main {
+            background-color: #f5f5f5;
+            height:80vh;
+        }
+
+    .form {
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+    
+    }
+
+    .form__group-work {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+
+    }
+
+    .form__group-rest {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+
+    }
+
+    .form__button-submit {
+        padding: 20px;
+        margin: 15px;
+        width: 300px;
+        height: 180px;
+        border: none;
+        border-radius: 3px;
+        background: #fff;
+        color: #000;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+
+}
+
+
+@media screen and (max-width: 480px) {
+   
+    .header__inner {
+            margin: 0 auto;
+            padding: 20px 5px;
+            max-width: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+        }
+
+    .header-nav {
+            background: #fff;
+            display: flex;
+        }
+
+    .form {
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+    
+        }
+
+    .form__group-work {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+    
+        }
+    
+    .form__group-rest {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+    
+        }
+
+    .form__button-submit {
+    padding: 20px;
+    margin :15px;
+    width: 250px;
+    height: 100px;
+    border: none;
+    border-radius: 3px;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 }

@@ -96,7 +96,41 @@ svg.w-5.h-5 {
     height: 30px;
 }
 
+.pagination {
+    display: inline_block;
+    
+
+}
+
+.pagination a,
+.pagination a:first-child {
+    color: blue;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddddd0;
+}
+
+
+.pagination a.active,
+.pagination li:first-child.active {
+    background-color: rgb(22, 129, 201);
+    color: white;
+    border: 1px solid rgb(22, 129, 201);
+}
+
+.pagination a:hover:not(.active) {
+    background-color: rgb(22, 129, 201);
+    color:white;
+}
+
+
 footer {
-    padding: 10px 0px;
+    margin-top:20px;
+
+}
+
+.small{
     text-align: center;
 }
