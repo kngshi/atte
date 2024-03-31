@@ -62,7 +62,7 @@ class TimeController extends Controller
     public function attendance()
     {
 
-        $times = Time::Paginate(7);
+        $times = Time::Paginate(5);
 
         $timesByDate = Time::where('user_id', auth()->id())
                         ->orderBy('date', 'desc')
