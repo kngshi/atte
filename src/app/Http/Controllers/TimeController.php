@@ -72,10 +72,10 @@ class TimeController extends Controller
     // このアクションは、getメソッドで取得
     public function attendance()
     {
-
+        $user = auth()->user();
         $date = Carbon::parse(Time::latest('date')->first()->date)->format('Y-m-d');
-    $times = Time::paginate(5);
-    $rests = Rest::with('time')->get();
+        $times = $user->times()->paginate(5);
+        $rests = Rest::with('time')->get();
 
     // 時間の差を計算し、フォーマットする
     foreach ($times as $time) {

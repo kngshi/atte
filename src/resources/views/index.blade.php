@@ -72,7 +72,7 @@
      <form class="form" action="{{ route('rest.start') }}" method="post">
           @csrf
         <div class="form__button">
-          <button class="form__button-submit"  type="submit" name="rest_start" value="" disabled>休憩開始</button>
+          <button class="form__button-submit"  type="submit" name="rest_start" value="">休憩開始</button>
         </div>
       </form>
 
