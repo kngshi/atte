@@ -1,0 +1,136 @@
+.header {
+    background: #fff;
+    height: 10vh;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header-nav {
+    background: #fff;
+    display: flex;
+}
+
+.header-nav__link {
+    background: #fff;
+    margin-left: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.header-nav__button {
+    background: #fff;
+    margin-left: 40px;
+}
+
+.header__logo {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+
+main {
+    background-color: #f5f5f5;
+    height: 80vh;
+}
+
+.contact-form__heading {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.admin__table {
+    margin-top: 16px;
+    width: 90%;
+    border-collapse: collapse;
+    position: relative;
+    left: 5%;
+}
+
+.admin__row {
+    border-top: 1px solid #E0DFDE;
+}
+
+.admin__label,
+.admin__data {
+    padding: 16px 8px;
+}
+
+.admin__label:first-of-type,
+.admin__data:first-of-type {
+    padding-left: 48px;
+}
+
+.admin__label:last-of-type,
+.admin__data:last-of-type {
+    padding-right: 48px;
+}
+
+.admin__label {
+    text-align: left;
+    font-weight: 400;
+}
+
+.admin__detail-btn {
+    padding: 8px 12px;
+    border: 1px solid #D9C6B5;
+    background-color: #F0F0F0;
+    color: #D9C6B5;
+    text-decoration: none;
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
+
+.pagination {
+    display: inline_block;
+
+
+}
+
+.pagination a,
+.pagination a:first-child {
+    color: blue;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddddd0;
+}
+
+
+.pagination a.active,
+.pagination li:first-child.active {
+    background-color: rgb(22, 129, 201);
+    color: white;
+    border: 1px solid rgb(22, 129, 201);
+}
+
+.pagination a:hover:not(.active) {
+    background-color: rgb(22, 129, 201);
+    color: white;
+}
+
+
+footer {
+    margin-top: 20px;
+
+}
+
+.small {
+    text-align: center;
+}

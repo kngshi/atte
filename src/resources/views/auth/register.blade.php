@@ -1,17 +1,15 @@
 <x-guest-layout>
-    <header class="bg-gray-900 text-black text-xl">
-    <div class="container mx-auto py-4">
-        <a class="text-xl font-bold">Atte</a>
-    </div>
-</header>
+    <header class="bg-gray-900 text-black text-2xl">
+        <div class="container mx-auto py-4">
+            <a class="text-xl font-bold">Atte</a>
+        </div>
+    </header>
     
-     <x-auth-card class="">
-        <x-slot name="logo" >
-            <div>
-                <h1 class="text-xl italic font-bold">会員登録</h1>
-            </div>
-        </x-slot>
 
+     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+
+     <h1 class="text-xl mb-4">会員登録</h1>
+        
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
@@ -22,21 +20,21 @@
             <div>
                 <x-label for="name" :value="__('')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" placeholder="名前" :value="old('name')" required autofocus />
+                <x-input id="name" class="block mt-4 w-full" type="text" name="name" placeholder="名前" :value="old('name')" required autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" placeholder="メールアドレス" :value="old('email')" required />
+                <x-input id="email" class="block mt-8 w-full" type="email" name="email" placeholder="メールアドレス" :value="old('email')" required />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('')" />
 
-                <x-input id="password" class="block mt-1 w-full"
+                <x-input id="password" class="block mt-8 w-full"
                                 placeholder="パスワード"
                                 type="password"
                                 name="password"
@@ -47,15 +45,15 @@
             <div class="mt-4">
                 <x-label for="password_confirmation"  :value="__('')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
+                <x-input id="password_confirmation" class="block mt-8 w-full"
                                 placeholder="確認用パスワード"
                                 type="password"
                                 name="password_confirmation" required />
             </div>
 
             
-            <div class="mt-4 text-center">
-                <x-button class="block mt-1 w-full bg-blue-100 text-white bg-blue-500">
+            <div class="mt-4">
+                <x-button class="block mt-4 w-full text-white bg-blue-500  hover:bg-blue-700 mx-auto">
                     {{ __('会員登録') }}
                 </x-button>
             </div>
@@ -63,15 +61,16 @@
             <div class="mt-4 text-center" >
                 <div class="login text-center">アカウントをお持ちの方はこちら<br/></div>
 
-                <a class="text-base text-gray-600 hover:text-gray-900 center" href="{{ route('login') }}">
+                <a class="text-base text-blue-500 hover:text-blue-500 center" href="{{ route('login') }}">
                     {{ __('ログイン') }}
                 </a>
 
                 
             </div>
         </form>
-    </x-auth-card>
-    <footer class="text-base　bg-gray-900 py-4 text-center">
+    </div>
+
+    <footer class="text-base　bg-gray-900 py-4 text-center"　style="height: 20vh;">
         <small>Atte, Inc.</small>
     </footer>
 

@@ -43,11 +43,12 @@
   </header>
 
   <main>
-     @foreach($timesByDate as $timeByDate)
+     
     <div class="contact-form__content">
       <div class="contact-form__heading">
-        <h2>{{$date}}</h2>
+        <h2>2024-04-03</h2>
       </div>
+      
     
 
     　<table class="admin__table">
@@ -65,15 +66,15 @@
         @endauth
         <td class="admin__data">{{$time->work_start}}</td>
         <td class="admin__data">{{$time->work_end}}</td>
-        <td class="admin__data">{{$timeByDate->rest_total }}</td>
-        <td class="admin__data">{{$timeByDate->work_total }}</td>
+        <td class="admin__data">{{$time->restFormattedDiff}}</td>
+        <td class="admin__data">{{$time->workFormattedDiff}}</td>
       </tr>
        @endforeach
+       
     </table>
      {{ $times->links() }}
   
    </div>
-   @endforeach
   </main>
 
   <footer>

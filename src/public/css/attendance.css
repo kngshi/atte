@@ -1,6 +1,6 @@
 .header {
     background: #fff;
-    height: 10vh;
+
 }
 
 .header__inner {
@@ -128,9 +128,7 @@ svg.w-5.h-5 {
 
 footer {
     margin-top:20px;
-
-}
-
-.small{
     text-align: center;
+
 }
+

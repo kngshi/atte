@@ -44,14 +44,24 @@ class RestController extends Controller
     public function start(Request $request)
     {
         $user = Auth::id();
+        // timesテーブルから最新のレコードを取得
         $latest_time = Time::latest()->first();
         $rest_start = Carbon::now();
-        $buttonDisabled = false; // ボタンの活性化
+
+         $lastRecord = Time::where('user_id', $user)->latest()->first();
+
+        $restStartButtonDisabled = true; // ボタンの活性化
+
+        // 勤務開始ボタンの状態を取得
+        $workStartButtonDisabled = $lastRecord->work_start !== null;
+
+          $workEndButtonDisabled = $lastRecord->work_end !== null;
+
 
           if ($latest_time) {
         $time_id = $latest_time->id;
         // 最新の勤務情報がある場合、ボタンを非アクティブにする
-        $buttonDisabled = true;
+        $restStartButtonDisabled = false;
     } else {
         // 最新のレコードが存在しない場合は、エラーメッセージを設定する
         return back()->withErrors('No time record found.');
@@ -63,8 +73,9 @@ class RestController extends Controller
     ]);
 
 
+
     // リダイレクトなどの適切なレスポンスを返す
-    return view( 'index', compact('time_id','rest_start','buttonDisabled'));
+    return view( 'index', compact('time_id','rest_start','workStartButtonDisabled','workEndButtonDisabled','restStartButtonDisabled'));
 }
 
 
@@ -72,7 +83,7 @@ class RestController extends Controller
     {
     
         $user = Auth::id();
-        // times テーブルから最新のレコードを取得
+        // timesテーブルから最新のレコードを取得
         $latest_time = Time::latest()->first();
         $rest_end = Carbon::now();
         $buttonDisabled = false; // ボタンの活性化
@@ -85,6 +96,7 @@ class RestController extends Controller
         // 最新のレコードが存在しない場合は、適切なエラー処理を行う
         return back()->withErrors('No time record found.');
     }
+
 
     // 最新の勤務レコードを取得
         $rest_record = Rest::where('time_id', $time_id)->latest()->first();
