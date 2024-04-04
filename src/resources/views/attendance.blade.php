@@ -46,10 +46,16 @@
      
     <div class="contact-form__content">
       <div class="contact-form__heading">
-        <h2>2024-04-03</h2>
-      </div>
-      
-    
+        @if ($previousDate)
+        <a href="{{ route('attendance', ['date' => $previousDate]) }}" class="date-tag">&lt; </a>
+        @endif
+        <span class="currentDate">{{$currentDate}}</span>
+        @if ($nextDate)
+            <a href="{{ route('attendance', ['date' => $nextDate]) }}" class="date-tag">&gt;</a>
+        @endif
+      </div> 
+
+        
 
     　<table class="admin__table">
       <tr class="admin__row">
@@ -72,8 +78,8 @@
        @endforeach
        
     </table>
-     {{ $times->links() }}
-  
+    
+     {{ $times->links('vendor.pagination.default', ['date' => $currentDate]) }}
    </div>
   </main>
 
@@ -81,4 +87,13 @@
     <small>Atte,inc.</small>
   </footer>
 </body>
+
+<style>
+    .pagination {
+        display: flex;
+        margin-top: 10px;
+        text-align: center; 
+    }
+</style>
+
 </html>

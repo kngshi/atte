@@ -66,16 +66,20 @@ class TimeController extends Controller
      return view( 'index', compact('user','work_end','workStartButtonDisabled','workEndButtonDisabled'));
 }
 
-
-
-
     // このアクションは、getメソッドで取得
     public function attendance()
     {
         $user = auth()->user();
-        $date = Carbon::parse(Time::latest('date')->first()->date)->format('Y-m-d');
-        $times = $user->times()->paginate(5);
+        $dates = Time::select('date')->distinct()->pluck('date')->reverse();
+        $currentDate = request()->input('date', $dates->first()); // デフォルトは最初の日付
+
+        // 現在の日付に対するデータを取得
+        $times = $user->times()->whereDate('date', $currentDate)->paginate(5);
         $rests = Rest::with('time')->get();
+        
+        // 前後の日付を取得
+        $previousDate = Time::where('date', '<', $currentDate)->latest('date')->value('date');
+        $nextDate = Time::where('date', '>', $currentDate)->oldest('date')->value('date');
 
     // 時間の差を計算し、フォーマットする
     foreach ($times as $time) {
@@ -109,7 +113,7 @@ class TimeController extends Controller
     }
 
     
-        return view('attendance', compact('times','date'));
+        return view('attendance', compact('times','currentDate', 'dates', 'previousDate', 'nextDate'));
 
 
     }

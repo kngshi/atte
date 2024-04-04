@@ -33,6 +33,8 @@ Route::post('/', [TimeController::class, 'store']);
 // この下に、RestControllerでupdateアクションを作れば良い？
 // Route::post('/', [RestController::class, 'update']);
 
+
+
 Route::post('/time/start', [TimeController::class, 'start'])->name('time.start');
 Route::post('/time/end', [TimeController::class, 'end'])->name('time.end');
 
@@ -40,4 +42,4 @@ Route::post('/rest/start', [RestController::class, 'start'])->name('rest.start')
 Route::post('/rest/end', [RestController::class, 'end'])->name('rest.end');
 
 
-Route::get('/attendance', [TimeController::class, 'attendance']);
+Route::get('/attendance', [TimeController::class, 'attendance'])->name('attendance');

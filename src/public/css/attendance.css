@@ -46,9 +46,27 @@ main {
 }
 
 .contact-form__heading{
-    padding-top: 20px;
+    padding-top: 30px;
     text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
+
+.currentDate {
+    padding: 10px 20px;
+}
+
+.date-tag {
+    display: inline-block;
+    color: #007DC5;
+    padding: 0px 10px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 2px solid #007DC5;
+}
+
+
+
 
 .admin__table {
     margin-top: 16px;
@@ -97,37 +115,51 @@ svg.w-5.h-5 {
 }
 
 .pagination {
-    display: inline_block;
-    
-
+    display: flex;
+    justify-content: center; /* 中央に配置 */
+    align-items: center;
+    padding-top:20px;
 }
 
 .pagination a,
-.pagination a:first-child {
-    color: blue;
-    float: left;
-    padding: 8px 16px;
+.pagination span {
+    color: #007DC5;
+    font-size:18px;
+    padding: 10px 16px;
     text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #ddddd0;
 }
 
+.pagination li:first-child a,
+.pagination li:first-child span {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
 
-.pagination a.active,
-.pagination li:first-child.active {
-    background-color: rgb(22, 129, 201);
+.pagination li:last-child a,
+.pagination li:last-child span {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pagination li.active a,
+.pagination li.active span,
+.pagination li:first-child.active a,
+.pagination li:first-child.active span {
+    background-color: #007DC5;
     color: white;
-    border: 1px solid rgb(22, 129, 201);
+    border: 1px solid #007DC5;
 }
 
-.pagination a:hover:not(.active) {
-    background-color: rgb(22, 129, 201);
-    color:white;
+.pagination a:hover:not(.active),
+.pagination span:hover:not(.active) {
+    background-color: #007DC5;
+    color: white;
 }
-
 
 footer {
-    margin-top:20px;
+    margin-top:10px;
     text-align: center;
 
 }
