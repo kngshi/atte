@@ -77,13 +77,17 @@ main {
 }
 
 .admin__row {
-    border-top: 1px solid #E0DFDE;
+    border-top: 1px solid #b3b3b3;
+    
 }
+
 
 .admin__label,
 .admin__data {
     padding: 16px 20px;
+    
 }
+
 
 .admin__label:first-of-type,
 .admin__data:first-of-type {
@@ -97,8 +101,9 @@ main {
 
 .admin__label {
     text-align: left;
-    font-weight: 400;
+    font-weight: bold;
 }
+
 
 .admin__detail-btn {
     padding: 8px 12px;

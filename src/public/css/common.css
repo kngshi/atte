@@ -1,0 +1,21 @@
+.header {
+    background: #fff;
+
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+
+}

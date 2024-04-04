@@ -1,4 +1,8 @@
 <x-guest-layout>
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    </head>
+
     <header class="bg-gray-900 text-black text-2xl">
         <div class="container mx-auto py-4">
             <a class="text-xl font-bold">Atte</a>
@@ -6,7 +10,7 @@
     </header>
     
 
-     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+   <main class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 h-80vh">
 
      <h1 class="text-xl mb-4">会員登録</h1>
         
@@ -68,7 +72,8 @@
                 
             </div>
         </form>
-    </div>
+
+</main>
 
     <footer class="text-base　bg-gray-900 py-4 text-center"　style="height: 20vh;">
         <small>Atte, Inc.</small>
