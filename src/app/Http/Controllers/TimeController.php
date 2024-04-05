@@ -45,11 +45,12 @@ class TimeController extends Controller
 
     public function end()
     {
+        // セッションに勤務終了ボタンの状態を保存
         session(['workEndButtonDisabled' => true]);
-
-        // 休憩関連のセッション情報をリセット
-        session()->forget(['restStartButtonDisabled', 'restEndButtonDisabled']);
-
+        // 他のボタンも全て非活性化
+        session(['restStartButtonDisabled' => true]);
+        session(['restEndButtonDisabled' => true]);
+        
         $user = Auth::id();
         $work_end = Carbon::now();
 

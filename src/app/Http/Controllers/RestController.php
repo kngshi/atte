@@ -35,6 +35,8 @@ class RestController extends Controller
         // 最新のレコードが存在しない場合は、エラーメッセージを設定する
         return back()->withErrors('No time record found.');
         }
+
+        $restStartButtonDisabled = false;
     
         Rest::create([
         'time_id' => $time_id,
@@ -58,6 +60,8 @@ class RestController extends Controller
         // timesテーブルから最新のレコードを取得
         $latest_time = Time::latest()->first();
         $rest_end = Carbon::now();
+
+        $restEndButtonDisabled = false;
     
     
         // 最新のレコードが存在する場合、その time_id を取得
