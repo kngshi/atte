@@ -4,8 +4,8 @@
     </head>
 
     <header class="bg-gray-900 text-black text-2xl">
-        <div class="container mx-auto py-4">
-            <a class="text-xl font-bold">Atte</a>
+        <div class="container mx-auto py-4 ">
+            <p class="text-xl font-bold">Atte</p>
         </div>
     </header>
     

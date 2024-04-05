@@ -17,7 +17,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->call(function () {
             event(new DateChanged());
-        })->everyFiveMinutes();
+        })->dailyAt('00:00');
     }
 
     /**

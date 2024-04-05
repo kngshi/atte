@@ -50,7 +50,7 @@ main {
     text-align: center;
 }
 
-.admin__table {
+.user__table {
     margin-top: 16px;
     width: 90%;
     border-collapse: collapse;
@@ -58,31 +58,31 @@ main {
     left: 5%;
 }
 
-.admin__row {
+.user__row {
     border-top: 1px solid #E0DFDE;
 }
 
-.admin__label,
-.admin__data {
+.user__label,
+.user__data {
     padding: 16px 8px;
 }
 
-.admin__label:first-of-type,
-.admin__data:first-of-type {
+.user__label:first-of-type,
+.user__data:first-of-type {
     padding-left: 48px;
 }
 
-.admin__label:last-of-type,
-.admin__data:last-of-type {
+.user__label:last-of-type,
+.user__data:last-of-type {
     padding-right: 48px;
 }
 
-.admin__label {
+.user__label {
     text-align: left;
     font-weight: 400;
 }
 
-.admin__detail-btn {
+.user__detail-btn {
     padding: 8px 12px;
     border: 1px solid #D9C6B5;
     background-color: #F0F0F0;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,13 +8,12 @@
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 </head>
-
 <body>
   <header class="header">
     <div class="header__inner">
-      <a class="header__logo" href="/">
+      <div class="header__logo">
         Atte
-      </a>
+      </div>
       <nav>
           <ul class="header-nav">
             <li class="header-nav__item">
@@ -29,11 +27,11 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                 <x-responsive-nav-link :href="route('logout')"
-    onclick="event.preventDefault();
-                this.closest('form').submit();"
-    class="header-nav__link text-black !important underline-none !important" >
-    {{ __('ログアウト') }}
-</x-responsive-nav-link>
+                  onclick="event.preventDefault();
+                              this.closest('form').submit();"
+                  class="header-nav__link text-black !important underline-none !important" >
+                  {{ __('ログアウト') }}
+                </x-responsive-nav-link>
                 </form>
               </div>
           </ul>
@@ -42,12 +40,11 @@
   </header>
 
   <main>
-    <div class="contact-form__content">
-      <div class="contact-form__heading">
+    <div class="attendance__content">
+      <div class="attendance__heading">
         @auth
         <h2>{{Auth::user()->name}}さんお疲れ様です！</h2>
         @endauth
-        <!-- 認証したidの人物が表示される変数にすれば良い？ -->
   
       </div>
     

@@ -45,7 +45,7 @@ main {
     height: 80vh;
 }
 
-.contact-form__heading{
+.attendance__heading{
     padding-top: 30px;
     text-align: center;
     font-size: 18px;
@@ -68,7 +68,7 @@ main {
 
 
 
-.admin__table {
+.work__table {
     margin-top: 16px;
     width: 90%;
     border-collapse: collapse;
@@ -76,36 +76,36 @@ main {
         left: 5%;
 }
 
-.admin__row {
+.work__row {
     border-top: 1px solid #b3b3b3;
     
 }
 
 
-.admin__label,
-.admin__data {
+.work__label,
+.work__data {
     padding: 16px 20px;
     
 }
 
 
-.admin__label:first-of-type,
-.admin__data:first-of-type {
+.work__label:first-of-type,
+.work__data:first-of-type {
     padding-left: 48px;
 }
 
-.admin__label:last-of-type,
-.admin__data:last-of-type {
+.work__label:last-of-type,
+.work__data:last-of-type {
     padding-right: 48px;
 }
 
-.admin__label {
+.work__label {
     text-align: left;
     font-weight: bold;
 }
 
 
-.admin__detail-btn {
+.work__detail-btn {
     padding: 8px 12px;
     border: 1px solid #D9C6B5;
     background-color: #F0F0F0;

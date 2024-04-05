@@ -13,9 +13,10 @@
 <body>
   <header class="header">
     <div class="header__inner">
-      <a class="header__logo" href="/">
+      <div class="header__logo">
         Atte
-      </a>
+      </div>
+
       <nav>
           <ul class="header-nav">
             <li class="header-nav__item">
@@ -28,13 +29,12 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
-                <x-responsive-nav-link :href="route('login')"
-    onclick="event.preventDefault();
-                this.closest('form').submit();"
-    class="header-nav__link text-black !important underline-none !important" >
-    {{ __('ログアウト') }}
-</x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('login')"
+                    onclick="event.preventDefault();
+                              this.closest('form').submit();"
+                    class="header-nav__link text-black !important underline-none !important" >
+                    {{ __('ログアウト') }}
+                    </x-responsive-nav-link>
                 </form>
               </div>
           </ul>
@@ -44,8 +44,8 @@
 
   <main>
      
-    <div class="contact-form__content">
-      <div class="contact-form__heading">
+    <div class="attendance__content">
+      <div class="attendance__heading">
         @if ($previousDate)
         <a href="{{ route('attendance', ['date' => $previousDate]) }}" class="date-tag">&lt; </a>
         @endif
@@ -57,23 +57,23 @@
 
         
 
-    　<table class="admin__table">
-      <tr class="admin__row">
-        <th class="admin__label">名前</th>
-        <th class="admin__label">勤務開始</th>
-        <th class="admin__label">勤務終了</th>
-        <th class="admin__label">休憩時間</th>
-        <th class="admin__label">勤務時間</th>
+    　<table class="work__table">
+      <tr class="work__row">
+        <th class="work__label">名前</th>
+        <th class="work__label">勤務開始</th>
+        <th class="work__label">勤務終了</th>
+        <th class="work__label">休憩時間</th>
+        <th class="work__label">勤務時間</th>
       </tr>
       @foreach($times as $time)
-      <tr class="admin__row">
+      <tr class="work__row">
         @auth
-        <td class="admin__data">{{Auth::user()->name}}</td>
+        <td class="work__data">{{Auth::user()->name}}</td>
         @endauth
-        <td class="admin__data">{{$time->work_start}}</td>
-        <td class="admin__data">{{$time->work_end}}</td>
-        <td class="admin__data">{{$time->restFormattedDiff}}</td>
-        <td class="admin__data">{{$time->workFormattedDiff}}</td>
+        <td class="work__data">{{$time->work_start}}</td>
+        <td class="work__data">{{$time->work_end}}</td>
+        <td class="work__data">{{$time->restFormattedDiff}}</td>
+        <td class="work__data">{{$time->workFormattedDiff}}</td>
       </tr>
        @endforeach
        

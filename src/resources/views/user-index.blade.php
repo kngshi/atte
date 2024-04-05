@@ -49,17 +49,17 @@
       </div>
     
 
-    　<table class="admin__table">
-      <tr class="admin__row">
-        <th class="admin__label">名前</th>
-        <th class="admin__label">メールアドレス</th>
-         <th class="admin__label">メール認証時刻</th>
+    　<table class="user__table">
+      <tr class="user__row">
+        <th class="user__label">名前</th>
+        <th class="user__label">メールアドレス</th>
+         <th class="user__label">メール認証時刻</th>
       </tr>
       @foreach($users as $user)
-      <tr class="admin__row">
-        <td class="admin__data">{{ $user->name }}</td>
-        <td class="admin__data">{{ $user->email }}</td>
-        <td class="admin__data">{{ $user->email_verified_at }}</td>
+      <tr class="user__row">
+        <td class="user__data">{{ $user->name }}</td>
+        <td class="user__data">{{ $user->email }}</td>
+        <td class="user__data">{{ $user->email_verified_at }}</td>
       </tr>
        @endforeach
     </table>

@@ -15,11 +15,6 @@ use App\Http\Controllers\RestController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
