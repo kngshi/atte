@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -19,10 +19,10 @@
       <nav>
           <ul class="header-nav">
             <li class="header-nav__item">
-              <a class="header-nav__link" href="/">ホーム</a>
+              <a class="header-nav__link" href="/user-index">ユーザー 一覧</a>
             </li>
             <li class="header-nav__item">
-              <a class="header-nav__link" href="/attendance">日付一覧</a>
+              <a class="header-nav__link" href="/attendance">ユーザー別 勤怠一覧</a>
             </li>
             <div class="mt-3_space-y-1">
                 <!-- Authentication -->
@@ -43,10 +43,9 @@
   </header>
 
   <main>
-     @foreach($timesByDate as $timeByDate)
     <div class="contact-form__content">
       <div class="contact-form__heading">
-        <h2>ユーザー一覧</h2>
+        <h2>ユーザー 一覧</h2>
       </div>
     
 
@@ -54,23 +53,23 @@
       <tr class="admin__row">
         <th class="admin__label">名前</th>
         <th class="admin__label">メールアドレス</th>
+         <th class="admin__label">メール認証時刻</th>
       </tr>
       @foreach($users as $user)
       <tr class="admin__row">
-        @auth
         <td class="admin__data">{{ $user->name }}</td>
         <td class="admin__data">{{ $user->email }}</td>
+        <td class="admin__data">{{ $user->email_verified_at }}</td>
       </tr>
        @endforeach
     </table>
-     {{ $times->links() }}
-  
+     
    </div>
-   @endforeach
   </main>
 
   <footer>
     <small>Atte,inc.</small>
   </footer>
+
 </body>
 </html>

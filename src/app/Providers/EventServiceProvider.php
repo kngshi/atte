@@ -27,6 +27,10 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        parent::boot();
+
+        Event::listen(DateChanged::class, function () {
+            session()->forget('WorkStartButtonDisabled');
+              });
     }
 }
