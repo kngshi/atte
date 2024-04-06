@@ -17,7 +17,6 @@ class TimeController extends Controller
 
     public function start()
     {
-        
 
         $user = Auth::id();
         $date = Carbon::now();
