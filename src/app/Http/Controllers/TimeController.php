@@ -49,6 +49,10 @@ class TimeController extends Controller
         // 他のボタンも全て非活性化
         session(['restStartButtonDisabled' => true]);
         session(['restEndButtonDisabled' => true]);
+
+        // 勤務終了時の日付を取得
+        $currentDate = Carbon::now()->toDateString();
+
         
         $user = Auth::id();
         $work_end = Carbon::now();
@@ -58,10 +62,26 @@ class TimeController extends Controller
         $workEndButtonDisabled = false;
 
         if ($lastRecord) {
+        // 勤務終了時刻が当日の場合
+        if ($lastRecord->date == $currentDate) {
             $lastRecord->update([
                 'work_end' => $work_end,
             ]);
+        } else {
+            // 勤務終了時刻が翌日の場合
+            $lastRecord->update([
+                'work_end' => Carbon::parse($currentDate)->subSecond()->toTimeString(), // 当日の23:59:59に設定
+            ]);
+
+            // 翌日の勤務開始時刻を記録
+            Time::create([
+                'user_id' => $user,
+                'date' => $currentDate,
+                'work_start' => Carbon::parse($currentDate)->startOfDay(), // 翌日の00:00:00に設定
+                'work_end' => $work_end, // 翌日の勤務終了時刻を設定
+            ]);
         }
+}
 
         // 勤務開始ボタンの状態を取得
         $workStartButtonDisabled = $lastRecord->work_start !== null;
