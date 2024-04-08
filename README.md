@@ -1,7 +1,5 @@
 # Atte(勤怠管理システム)
 
-
-
 ## 作成した目的
 
 人事評価のため
@@ -25,17 +23,17 @@
 
 ## テーブル設計
 
-![テーブル設計書](specification.drawio.png)
+![テーブル設計書](src/specification.drawio.png)
 
-## ER図
+## ER 図
 
-![ER図](red.drawio.png)
+![ER図](src/red.drawio.png)
 
 ## 環境構築
 
 **Docker ビルド**
 
-1. `git clone git@github.comx
+1. `git clone git@github.com:kngshi/20240403_atte.git
 2. DockerDesktop アプリを立ち上げる
 3. `docker-compose up -d --build`
 
