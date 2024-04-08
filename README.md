@@ -1,5 +1,7 @@
 # Atte(勤怠管理システム)
 
+
+
 ## 作成した目的
 
 人事評価のため
@@ -8,8 +10,6 @@
 
 - 開発環境：http://localhost/
 - phpMyAdmin:：http://localhost:8080/
-
-## 他のリポジトリ
 
 ## 機能一覧
 
@@ -25,9 +25,11 @@
 
 ## テーブル設計
 
-## ER 図
+![テーブル設計書](specification.drawio.png)
 
-![alt](path/to/erd.drawio.png)
+## ER図
+
+![ER図](red.drawio.png)
 
 ## 環境構築
 

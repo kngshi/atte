@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,14 +8,12 @@
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/attendance.css') }}" />
 </head>
-
 <body>
   <header class="header">
     <div class="header__inner">
       <div class="header__logo">
         Atte
       </div>
-
       <nav>
           <ul class="header-nav">
             <li class="header-nav__item">
@@ -43,7 +40,6 @@
   </header>
 
   <main>
-     
     <div class="attendance__content">
       <div class="attendance__heading">
         @if ($previousDate)
