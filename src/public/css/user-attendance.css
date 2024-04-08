@@ -1,0 +1,170 @@
+.header {
+    background: #fff;
+
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header-nav {
+    background: #fff;
+    display: flex;
+}
+
+.header-nav__link {
+    background: #fff;
+    margin-left: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.header-nav__button {
+    background: #fff;
+    margin-left: 40px;
+}
+
+.header__logo {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+
+main {
+    background-color: #f5f5f5;
+    height: 80vh;
+}
+
+.attendance__heading {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.currentDate {
+    padding: 10px 20px;
+}
+
+.date-tag {
+    display: inline-block;
+    color: #007DC5;
+    padding: 0px 10px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 2px solid #007DC5;
+}
+
+
+
+
+.work__table {
+    margin-top: 16px;
+    width: 90%;
+    border-collapse: collapse;
+    position: relative;
+    left: 5%;
+}
+
+.work__row {
+    border-top: 1px solid #b3b3b3;
+
+}
+
+
+.work__label,
+.work__data {
+    padding: 16px 20px;
+
+}
+
+
+.work__label:first-of-type,
+.work__data:first-of-type {
+    padding-left: 48px;
+}
+
+.work__label:last-of-type,
+.work__data:last-of-type {
+    padding-right: 48px;
+}
+
+.work__label {
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.work__detail-btn {
+    padding: 8px 12px;
+    border: 1px solid #D9C6B5;
+    background-color: #F0F0F0;
+    color: #D9C6B5;
+    text-decoration: none;
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.pagination a,
+.pagination span {
+    color: #007DC5;
+    font-size: 18px;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddddd0;
+}
+
+.pagination li:first-child a,
+.pagination li:first-child span {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-child a,
+.pagination li:last-child span {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pagination li.active a,
+.pagination li.active span,
+.pagination li:first-child.active a,
+.pagination li:first-child.active span {
+    background-color: #007DC5;
+    color: white;
+    border: 1px solid #007DC5;
+}
+
+.pagination a:hover:not(.active),
+.pagination span:hover:not(.active) {
+    background-color: #007DC5;
+    color: white;
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+
+}

@@ -10,8 +10,7 @@ class Rest extends Model
 {
     use HasFactory;
 
-     protected $fillable = [ 'time_id', 'rest_start', 'rest_end'];
-
+    protected $fillable = [ 'time_id', 'rest_start', 'rest_end'];
 
     public function time(){
         return $this->belongsTo(Time::class);

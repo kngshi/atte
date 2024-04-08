@@ -24,11 +24,9 @@ class TimeController extends Controller
         $latest_time = Time::latest()->first();
         $workStartButtonDisabled = false;
 
-        
-
         if ($latest_time && $latest_time->work_start !== null) {
             $workStartButtonDisabled = true;
-        } 
+        }
 
         session(['workStartButtonDisabled' => true]);
 
@@ -53,7 +51,6 @@ class TimeController extends Controller
         // 勤務終了時の日付を取得
         $currentDate = Carbon::now()->toDateString();
 
-        
         $user = Auth::id();
         $work_end = Carbon::now();
 
@@ -82,7 +79,6 @@ class TimeController extends Controller
             ]);
         }
 }
-
         // 勤務開始ボタンの状態を取得
         $workStartButtonDisabled = $lastRecord->work_start !== null;
 

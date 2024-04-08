@@ -51,9 +51,7 @@
         @endif
       </div> 
 
-        
-
-    　<table class="work__table">
+    <table class="work__table">
       <tr class="work__row">
         <th class="work__label">名前</th>
         <th class="work__label">勤務開始</th>
@@ -71,14 +69,11 @@
         <td class="work__data">{{$time->restFormattedDiff}}</td>
         <td class="work__data">{{$time->workFormattedDiff}}</td>
       </tr>
-       @endforeach
-       
+      @endforeach
     </table>
-    
-     {{ $times->links('vendor.pagination.default', ['date' => $currentDate]) }}
-   </div>
+    {{ $times->links('vendor.pagination.default', ['date' => $currentDate]) }}
+    </div>
   </main>
-
   <footer>
     <small>Atte,inc.</small>
   </footer>
@@ -91,5 +86,4 @@
         text-align: center; 
     }
 </style>
-
 </html>

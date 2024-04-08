@@ -100,6 +100,8 @@ button:disabled {
 footer {
     padding: 10px 0px;
     text-align: center;
+    }
+
 
 /* タブレットサイズ */
 @media screen and (max-width: 768px) {
@@ -111,106 +113,101 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
 
     .header-nav {
         background: #fff;
         display: flex;
     }
 
-        main {
-            background-color: #f5f5f5;
-            height:80vh;
-        }
+    .main {
+        background-color: #f5f5f5;
+        height:80vh;
+    }
 
-    .form {
+    .attendance__content {
         margin: 0 auto;
-        width: 80%;
+        padding: 15px 15px;
+        max-width: 768px;
+    }
+
+    .attendance__heading {
+        margin-bottom: 20px;
         text-align: center;
-    
-    }
-
-    .form__group-work {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 15px;
-
-    }
-
-    .form__group-rest {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 15px;
-
     }
 
     .form__button-submit {
-        padding: 20px;
-        margin: 15px;
-        width: 300px;
-        height: 180px;
         border: none;
+        width: 300px;
+        height: 120px;
         border-radius: 3px;
         background: #fff;
         color: #000;
         font-size: 20px;
         cursor: pointer;
+
     }
-
-
 }
 
+/* スマートフォンサイズ */
+@media screen and (max-width: 480px) {
 
- @media screen and (max-width: 480px) {
-   
     .header__inner {
-            margin: 0 auto;
-            padding: 20px 5px;
-            max-width: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-    
+        margin: 0 auto;
+        padding: 20px 15px;
+        max-width: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         }
-
+    
     .header-nav {
-            background: #fff;
-            display: flex;
+        background: #fff;
+        display: flex;
         }
 
-    .form {
-            margin: 0 auto;
-            width: 100%;
-            text-align: center;
-    
-        }
+    .header-nav__link {
+        background: #fff;
+        margin-left: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+    }
+
+    .attendance__content {
+        margin: 0 auto;
+        padding: 20px 15px;
+        max-width: 480px;
+    }
+
+    .attendance__heading {
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
     .form__group-work {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-    
-        }
-    
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+    }
+
     .form__group-rest {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-    
-        }
+        display: flex;
+        justify-content: center;
+        justify-content: space-between;
+    }
 
     .form__button-submit {
-    padding: 20px;
-    margin :15px;
-    width: 250px;
-    height: 100px;
-    border: none;
-    border-radius: 3px;
-    background: #fff;
-    color: #000;
-    font-size: 20px;
-    cursor: pointer;
+        border: none;
+        width: 200px;
+        height: 100px;
+        border-radius: 3px;
+        background: #fff;
+        color: #000;
+        font-size: 20px;
+        cursor: pointer;
+        flex-wrap: wrap;
+
     }
-}
-}
 }

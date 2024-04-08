@@ -77,7 +77,8 @@
         </div>
       </form>
     </div>
-  <main>
+  </div>
+</main>
 
   <footer>
     <small> Atte,inc.</small>

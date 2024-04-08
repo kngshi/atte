@@ -45,7 +45,7 @@ main {
     height: 80vh;
 }
 
-.attendance__heading{
+.attendance__heading {
     padding-top: 30px;
     text-align: center;
     font-size: 18px;
@@ -73,19 +73,19 @@ main {
     width: 90%;
     border-collapse: collapse;
     position: relative;
-        left: 5%;
+    left: 5%;
 }
 
 .work__row {
     border-top: 1px solid #b3b3b3;
-    
+
 }
 
 
 .work__label,
 .work__data {
     padding: 16px 20px;
-    
+
 }
 
 
@@ -121,15 +121,16 @@ svg.w-5.h-5 {
 
 .pagination {
     display: flex;
-    justify-content: center; /* 中央に配置 */
+    justify-content: center;
+    /* 中央に配置 */
     align-items: center;
-    padding-top:20px;
+    padding-top: 20px;
 }
 
 .pagination a,
 .pagination span {
     color: #007DC5;
-    font-size:18px;
+    font-size: 18px;
     padding: 10px 16px;
     text-decoration: none;
     transition: background-color .3s;
@@ -164,8 +165,7 @@ svg.w-5.h-5 {
 }
 
 footer {
-    margin-top:10px;
+    margin-top: 10px;
     text-align: center;
 
 }
-

@@ -98,6 +98,13 @@ footer {
         align-items: center;
         justify-content: space-between;
     }
+
+    h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    
 }
 
 @media screen and (max-width: 480px) {
@@ -110,4 +117,6 @@ footer {
         align-items: center;
         justify-content: space-between;
     }
+
+        
 }

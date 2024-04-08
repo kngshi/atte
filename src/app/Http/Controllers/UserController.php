@@ -6,41 +6,42 @@ use App\Models\Time;
 use App\Models\Rest;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
 {
     public function index(){
-        
+
         $user= User::select('id')->get();
-        
+
         return view('index', compact('user'));
     }
 
-     public function userIndex(){
-        
-        $users = User::all();
-        
+    public function userIndex(){
+
+        $users = User::Paginate(5);
+
         return view('user-index', compact('users'));
     }
 
 
     public function userAttendance(){
-        
-        $user = all();
+
+        $user = auth()->user();
         $dates = Time::select('date')->distinct()->pluck('date')->reverse();
         $currentDate = request()->input('date', $dates->first()); // デフォルトは最初の日付
 
         // 現在の日付に対するデータを取得
         $times = $user->times()->whereDate('date', $currentDate)->paginate(5);
         $rests = Rest::with('time')->get();
-        
+
         // 前後の日付を取得
         $previousDate = Time::where('date', '<', $currentDate)->latest('date')->value('date');
         $nextDate = Time::where('date', '>', $currentDate)->oldest('date')->value('date');
 
-    // 時間の差を計算し、フォーマットする
-    foreach ($times as $time) {
+        // 時間の差を計算し、フォーマットする
+        foreach ($times as $time) {
         // 勤務時間の計算
         $workDiffInSeconds = 0;
         if ($time->work_start && $time->work_end) {
@@ -70,8 +71,7 @@ class UserController extends Controller
         $time->restFormattedDiff = sprintf('%02d:%02d:%02d', $restHours, $restMinutes, $restSeconds);
     }
 
-    
-        return view('attendance', compact('times','currentDate', 'dates', 'previousDate', 'nextDate'));
+        return view('attendance', compact('user','times','currentDate', 'dates', 'previousDate', 'nextDate'));
 
     }
 

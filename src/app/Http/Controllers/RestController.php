@@ -17,7 +17,6 @@ class RestController extends Controller
 
     public function start(Request $request)
     {
-     
          // セッションに休憩開始ボタンの状態を保存
         session(['restStartButtonDisabled' => true]);
         // セッションに休憩終了ボタンの状態をリセット
@@ -30,19 +29,17 @@ class RestController extends Controller
 
         if ($latest_time) {
         $time_id = $latest_time->id;
-    
         } else {
         // 最新のレコードが存在しない場合は、エラーメッセージを設定する
         return back()->withErrors('No time record found.');
         }
 
         $restStartButtonDisabled = false;
-    
+        
         Rest::create([
         'time_id' => $time_id,
         'rest_start' => $rest_start
         ]);
-
 
         // リダイレクトなどの適切なレスポンスを返す
         return view( 'index', compact('time_id','rest_start'));
@@ -50,7 +47,6 @@ class RestController extends Controller
 
     public function end(Request $request)
     {
-    
         // セッションに休憩終了ボタンの状態を保存
         session(['restEndButtonDisabled' => true]);
         // セッションに休憩開始ボタンの状態を再度活性化
@@ -62,8 +58,7 @@ class RestController extends Controller
         $rest_end = Carbon::now();
 
         $restEndButtonDisabled = false;
-    
-    
+
         // 最新のレコードが存在する場合、その time_id を取得
         if ($latest_time) {
         $time_id = $latest_time->id;
