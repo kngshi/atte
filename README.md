@@ -47,7 +47,7 @@
 
 **Docker ビルド**
 
-1. `git clone git@github.com:kngshi/20240403_atte.git
+1. `git clone git@github.com:kngshi/atte.git
 2. DockerDesktop アプリを立ち上げる
 3. `docker-compose up -d --build`
 
@@ -94,5 +94,7 @@ php artisan migrate
 ```bash
 php artisan migrate
 ```
+
 # atte
+
 # atte
