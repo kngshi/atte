@@ -27,7 +27,7 @@
 
 ## ER 図
 
-![ER図](src/red.drawio.png)
+![ER図](src/erd.drawio.png)
 
 ## 環境構築
 
