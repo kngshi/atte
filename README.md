@@ -94,7 +94,3 @@ php artisan migrate
 ```bash
 php artisan migrate
 ```
-
-# atte
-
-# atte
