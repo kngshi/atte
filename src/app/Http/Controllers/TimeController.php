@@ -78,7 +78,8 @@ class TimeController extends Controller
                 'work_end' => $work_end, // 翌日の勤務終了時刻を設定
             ]);
         }
-}
+        }
+
         // 勤務開始ボタンの状態を取得
         $workStartButtonDisabled = $lastRecord->work_start !== null;
 

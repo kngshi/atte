@@ -14,15 +14,9 @@ use App\Http\Controllers\RestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 require __DIR__.'/auth.php';
 
-Route::get('/', [UserController::class, 'index']);
+Route::get('/', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('index');
 
 Route::post('/time/start', [TimeController::class, 'start'])->name('time.start');
 Route::post('/time/end', [TimeController::class, 'end'])->name('time.end');
