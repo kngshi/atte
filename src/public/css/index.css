@@ -9,7 +9,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
 }
 
 .header-nav {
@@ -25,8 +24,6 @@
     text-decoration: none;
     color:black;
 }
-
-
 
 .header-nav__button {
     background: #fff;
@@ -61,21 +58,18 @@ main {
     margin: 0px auto;
     width: 80%;
     text-align: center;
-    
 }
 
 .form__group-work {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
-    
 }
 
 .form__group-rest {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
-
 }
 
 
@@ -145,7 +139,6 @@ footer {
         color: #000;
         font-size: 20px;
         cursor: pointer;
-
     }
 }
 
