@@ -93,5 +93,5 @@ php artisan migrate
 7. シーディングの実行
 
 ```bash
-php artisan migrate
+php artisan db:seed
 ```
