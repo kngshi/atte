@@ -71,7 +71,6 @@
     <small>Atte,inc.</small>
 </footer>
 </body>
-
 <style>
     .pagination {
         display: flex;
@@ -79,5 +78,4 @@
         text-align: center; 
     }
 </style>
-
 </html>
