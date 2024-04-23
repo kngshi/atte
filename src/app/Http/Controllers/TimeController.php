@@ -28,6 +28,9 @@ class TimeController extends Controller
         }
 
         session(['workStartButtonDisabled' => true]);
+        session(['workEndButtonDisabled' => false]);
+        session(['restStartButtonDisabled' => false]);
+        session(['restEndButtonDisabled' => true]);
 
         Time::create([
             'user_id' => $user,
@@ -41,9 +44,8 @@ class TimeController extends Controller
 
     public function end()
     {
-        // セッションに勤務終了ボタンの状態を保存
+    
         session(['workEndButtonDisabled' => true]);
-        // 他のボタンも全て非活性化
         session(['restStartButtonDisabled' => true]);
         session(['restEndButtonDisabled' => true]);
 
@@ -137,6 +139,56 @@ class TimeController extends Controller
     }
 
         return view('attendance', compact('times','currentDate', 'dates', 'previousDate', 'nextDate'));
+
+    }
+
+    public function userAttendance()
+    {
+        $user = auth()->user();
+        $dates = Time::select('date')->distinct()->orderBy('date')->pluck('date');
+        $currentDate = request()->input('date', $dates->first()); // デフォルトは最初の日付
+
+        // 現在の日付に対するデータを取得
+        $times = collect(); // 空のコレクションを作成して勤務時間を追加していく
+        foreach ($dates as $date) {
+            $dayTimes = $user->times()->whereDate('date', $date)->get();
+            $times = $times->merge($dayTimes);
+        }
+
+        $rests = Rest::with('time')->get();
+
+        // 時間の差を計算し、フォーマットする
+        foreach ($times as $time) {
+        // 勤務時間の計算
+        $workDiffInSeconds = 0;
+        if ($time->work_start && $time->work_end) {
+            $work_start = Carbon::parse($time->work_start);
+            $work_end = Carbon::parse($time->work_end);
+            $workDiffInSeconds = $work_end->diffInSeconds($work_start);
+        }
+
+        $workHours = floor($workDiffInSeconds / 3600);
+        $workMinutes = floor(($workDiffInSeconds % 3600) / 60);
+        $workSeconds = $workDiffInSeconds % 60;
+        $time->workFormattedDiff = sprintf('%02d:%02d:%02d', $workHours, $workMinutes, $workSeconds);
+
+        // 休憩時間の計算
+        $restDiffInSeconds = 0;
+        foreach ($rests as $rest) {
+            if ($rest->time_id == $time->id && $rest->rest_start && $rest->rest_end) {
+                $rest_start = Carbon::parse($rest->rest_start);
+                $rest_end = Carbon::parse($rest->rest_end);
+                $restDiffInSeconds += $rest_end->diffInSeconds($rest_start);
+            }
+        }
+
+        $restHours = floor($restDiffInSeconds / 3600);
+        $restMinutes = floor(($restDiffInSeconds % 3600) / 60);
+        $restSeconds = $restDiffInSeconds % 60;
+        $time->restFormattedDiff = sprintf('%02d:%02d:%02d', $restHours, $restMinutes, $restSeconds);
+    }
+    
+        return view('user-attendance', compact('times', 'dates' ));
 
     }
 

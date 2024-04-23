@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +8,6 @@
 <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/user-index.css') }}" />
 </head>
-
 <body>
 <header class="header">
     <div class="header__inner">
@@ -22,7 +20,7 @@
                     <a class="header-nav__link" href="/user-index">ユーザー一覧</a>
                 </li>
                 <li class="header-nav__item">
-                    <a class="header-nav__link" href="/attendance">ユーザー別勤怠一覧</a>
+                    <a class="header-nav__link" href="/user-attendance">ユーザー別勤怠表</a>
                 </li>
                 <div class="mt-3_space-y-1">
                     <!-- Authentication -->
@@ -40,7 +38,6 @@
         </nav>
     </div>
 </header>
-
 <main>
     <div class="contact-form__content">
         <div class="contact-form__heading">
@@ -62,7 +59,6 @@
         </table>
     </div>
 </main>
-
 <footer>
     <small>Atte,inc.</small>
 </footer>

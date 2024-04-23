@@ -22,7 +22,7 @@
                 <a class="header-nav__link" href="/user-index">ユーザー 一覧</a>
             </li>
             <li class="header-nav__item">
-                <a class="header-nav__link" href="/user-attendance">ユーザー別 勤怠一覧</a>
+                <a class="header-nav__link" href="/user-attendance">ユーザー別勤怠表</a>
             </li>
             <div class="mt-3_space-y-1">
                 <!-- Authentication -->
@@ -42,35 +42,29 @@
 </header>
 <main>
     <div class="contact-form__content">
-        <div class="contact-form__heading">
-        @if ($previousDate)
-        <a href="{{ route('attendance', ['date' => $previousDate]) }}" class="date-tag">&lt; </a>
-        @endif
-        <span class="currentDate">{{$currentDate}}</span>
-        @if ($nextDate)
-        <a href="{{ route('attendance', ['date' => $nextDate]) }}" class="date-tag">&gt;</a>
-        @endif
+        <div class="attendance__heading">
+        <h2>{{Auth::user()->name}}さんお疲れ様です！</h2>
+      </div>
     </div>
 
-    <table class="admin__table">
-        <tr class="admin__row">
-            <th class="admin__label">名前</th>
-            <th class="admin__label">勤務開始</th>
-            <th class="admin__label">勤務終了</th>
-            <th class="admin__label">休憩時間</th>
-            <th class="admin__label">勤務時間</th>
+    <table class="work__table">
+        <tr class="work__row">
+            <th class="work__label">日付</th>
+            <th class="work__label">勤務開始</th>
+            <th class="work__label">勤務終了</th>
+            <th class="work__label">休憩時間</th>
+            <th class="work__label">勤務時間</th>
         </tr>
         @foreach($times as $time)
-        <tr class="admin__row">
-            <td class="admin__data">{{Auth::user()->name}}</td>
-            <td class="admin__data">{{$time->work_start}}</td>
-            <td class="admin__data">{{$time->work_end}}</td>
-            <td class="admin__data">{{$time->restFormattedDiff}}</td>
-            <td class="admin__data">{{$time->workFormattedDiff}}</td>
+        <tr class="work__row">
+            <td class="work__data">{{$time->date}}</td>
+            <td class="work__data">{{$time->work_start}}</td>
+            <td class="work__data">{{$time->work_end}}</td>
+            <td class="work__data">{{$time->restFormattedDiff}}</td>
+            <td class="work__data">{{$time->workFormattedDiff}}</td>
         </tr>
         @endforeach
     </table>
-    {{ $times->links('vendor.pagination.default', ['date' => $currentDate]) }}
     </div>
 </main>
 <footer>

@@ -17,10 +17,10 @@ class RestController extends Controller
 
     public function start(Request $request)
     {
-         // セッションに休憩開始ボタンの状態を保存
         session(['restStartButtonDisabled' => true]);
         // セッションに休憩終了ボタンの状態をリセット
         session()->forget('restEndButtonDisabled');
+        session(['workEndButtonDisabled' => true]);
 
         $time = Auth::id();
         // timesテーブルから最新のレコードを取得
@@ -35,7 +35,7 @@ class RestController extends Controller
         }
 
         $restStartButtonDisabled = false;
-        
+
         Rest::create([
         'time_id' => $time_id,
         'rest_start' => $rest_start
@@ -51,6 +51,7 @@ class RestController extends Controller
         session(['restEndButtonDisabled' => true]);
         // セッションに休憩開始ボタンの状態を再度活性化
         session()->forget('restStartButtonDisabled');
+        session(['workEndButtonDisabled' => false]);
 
         $user = Auth::id();
         // timesテーブルから最新のレコードを取得

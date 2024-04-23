@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
   </head>
-
   <body>
   <header class="header">
     <div class="header__inner">
@@ -39,7 +38,6 @@
         </nav>
     </div>
   </header>
-
   <main>
     <div class="attendance__content">
       <div class="attendance__heading">
@@ -47,7 +45,6 @@
         <h2>{{Auth::user()->name}}さんお疲れ様です！</h2>
         @endauth
       </div>
-
     <div class="form__group-work" >
       <form class="form" action="{{ route('time.start') }}" method="post">
         @csrf
@@ -62,7 +59,6 @@
         </div>
       </form>
     </div>
-
     <div class="form__group-rest" >
       <form class="form" action="{{ route('rest.start') }}" method="post">
         @csrf
@@ -79,7 +75,6 @@
     </div>
   </div>
 </main>
-
   <footer>
     <small> Atte,inc.</small>
   </footer>

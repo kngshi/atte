@@ -25,4 +25,6 @@ Route::post('/rest/start', [RestController::class, 'start'])->name('rest.start')
 Route::post('/rest/end', [RestController::class, 'end'])->name('rest.end');
 
 Route::get('/attendance', [TimeController::class, 'attendance'])->name('attendance');
+
 Route::get('/user-index', [UserController::class, 'userIndex']);
+Route::get('/user-attendance', [TimeController::class, 'userAttendance']);

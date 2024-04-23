@@ -38,7 +38,6 @@
         </nav>
     </div>
   </header>
-
   <main>
     <div class="attendance__content">
       <div class="attendance__heading">
@@ -49,8 +48,7 @@
         @if ($nextDate)
             <a href="{{ route('attendance', ['date' => $nextDate]) }}" class="date-tag">&gt;</a>
         @endif
-      </div> 
-
+      </div>
     <table class="work__table">
       <tr class="work__row">
         <th class="work__label">名前</th>
@@ -78,7 +76,6 @@
     <small>Atte,inc.</small>
   </footer>
 </body>
-
 <style>
     .pagination {
         display: flex;
