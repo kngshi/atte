@@ -28,6 +28,9 @@
             <div>
                 <x-label for="name" :value="__('')" />
                 <x-input id="name" class="form-content" type="text" name="name" placeholder="名前" :value="old('name')" required autofocus />
+                @error('name')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <!-- Email Address -->
             <div class="mt-4">
