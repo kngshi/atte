@@ -7,21 +7,17 @@
         <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     </head>
-
     <header class="header">
         <div class="header__inner">
             <div class="header__logo">Atte</div>
         </div>
     </header>
-    
-
     <main class="sm:justify-center">
         <h2 class="">ログイン</h2>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
         <form method="POST" action="{{ route('login') }}" class="form-content">
             @csrf
             <!-- Email Address -->
@@ -39,14 +35,12 @@
                                 name="password"
                                 required autocomplete="current-password" />
             </div>
-
             <div class="form-container">
                 <x-button class="form-button">
                     {{ __('ログイン') }}
                 </x-button>
             </div>
-
-             <div class="mt-4 register" >
+            <div class="mt-4 register" >
                 <div class="register-text">アカウントをお持ちでない方はこちら<br/></div>
                 <a class="register-link" href="{{ route('register') }}">
                     {{ __('会員登録') }}
@@ -54,10 +48,8 @@
             </div>
         </form>
     </div>
-
 </main>
     <footer class="footer">
         <small>Atte, Inc.</small>
     </footer>
-
 </x-guest-layout>
