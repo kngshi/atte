@@ -136,7 +136,7 @@ class TimeController extends Controller
         $restMinutes = floor(($restDiffInSeconds % 3600) / 60);
         $restSeconds = $restDiffInSeconds % 60;
         $time->restFormattedDiff = sprintf('%02d:%02d:%02d', $restHours, $restMinutes, $restSeconds);
-    }
+        }
 
         return view('attendance', compact('times','currentDate', 'dates', 'previousDate', 'nextDate'));
 
@@ -187,9 +187,7 @@ class TimeController extends Controller
         $restSeconds = $restDiffInSeconds % 60;
         $time->restFormattedDiff = sprintf('%02d:%02d:%02d', $restHours, $restMinutes, $restSeconds);
     }
-    
+
         return view('user-attendance', compact('times', 'dates' ));
-
     }
-
 }
